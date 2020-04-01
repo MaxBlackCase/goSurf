@@ -1,3 +1,0 @@
-redirects:
-    redirect_to: ./app/index.html
-    try_files: true
