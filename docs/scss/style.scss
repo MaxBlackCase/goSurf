@@ -192,7 +192,8 @@
 
 .line-animation {
   stroke-dashoffset: 600;
-  animation: animdash 4s infinite 6s;
+  stroke-dasharray: 600;
+  animation: animdash 4s infinite 6s linear;
 }
 @keyframes animdash {
   to {

@@ -5,11 +5,12 @@ let sass = require('gulp-sass')
 let uglify = require('gulp-uglify')
 let concat = require('gulp-concat')
 let pug = require('gulp-pug')
+let kit = require('gulp-kit')
 let autoprefixer = require('gulp-autoprefixer')
 
 gulp.task('scss', function() {
   return gulp
-    .src('./app/scss/**/*.scss')
+    .src('./docs/scss/**/*.scss')
     .pipe(sass({ outputStyle: 'compressed' }))
     .pipe(
       autoprefixer({
@@ -18,7 +19,7 @@ gulp.task('scss', function() {
       })
     )
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('./app/css'))
+    .pipe(gulp.dest('./docs/css'))
     .pipe(browserSync.reload({ stream: true }))
 })
 
@@ -27,30 +28,37 @@ gulp.task('css', () => {
     .src([
       'node_modules/normalize.css/normalize.css',
       'node_modules/animate.css/animate.css',
-      'node_modules/slick-carousel/slick/slick.css',
+      'node_modules/slick-carousel/slick/slick.css'
     ])
     .pipe(concat('_libs.scss'))
-    .pipe(gulp.dest('./app/scss/'))
+    .pipe(gulp.dest('./docs/scss/'))
     .pipe(browserSync.reload({ stream: true }))
 })
 
+gulp.task('kit', function(){
+  return gulp.src('docs/*.kit')
+  .pipe(kit())
+  .pipe(gulp.dest('docs/'))
+  // .pipe(browserSync.reload({ stream: true }))
+});
+
 gulp.task('html', function() {
-  return gulp.src('app/*.html').pipe(browserSync.reload({ stream: true }))
+  return gulp.src('docs/*.html').pipe(browserSync.reload({ stream: true }))
 })
 
 gulp.task('pug', function() {
   return gulp
-    .src('./app/*.pug')
+    .src('./docs/*.pug')
     .pipe(
       pug({
         pretty: true
       })
     )
-    .pipe(gulp.dest('./app/'))
+    .pipe(gulp.dest('./docs/'))
 })
 
 gulp.task('script', function() {
-  return gulp.src('app/js/*.js').pipe(browserSync.reload({ stream: true }))
+  return gulp.src('docs/js/*.js').pipe(browserSync.reload({ stream: true }))
 })
 
 gulp.task('js', function() {
@@ -61,25 +69,26 @@ gulp.task('js', function() {
     ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./app/js'))
+    .pipe(gulp.dest('./docs/js'))
     .pipe(browserSync.reload({ stream: true }))
 })
 
 gulp.task('browser-sync', function() {
   browserSync.init({
     server: {
-      baseDir: './app/'
+      baseDir: './docs/'
     }
   })
 })
 
 gulp.task('watch', function() {
-  gulp.watch('app/scss/**/*.scss', gulp.parallel('scss'))
-  gulp.watch('app/*.html', gulp.parallel('html'))
-  gulp.watch('app/js/*.js', gulp.parallel('script'))
+  gulp.watch('docs/**/*.kit', gulp.parallel('kit'))
+  gulp.watch('docs/**/*.html', gulp.parallel('html'))
+  gulp.watch('docs/scss/**/*.scss', gulp.parallel('scss'))
+  gulp.watch('docs/js/*.js', gulp.parallel('script'))
 })
 
 gulp.task(
   'default',
-  gulp.parallel('css', 'scss', 'js', 'browser-sync', 'watch')
+  gulp.parallel('kit', 'scss', 'css', 'js', 'browser-sync', 'watch')
 )
