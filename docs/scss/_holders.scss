@@ -1,0 +1,205 @@
+.holders {
+  background-image: url(../images/travel-coctail-bg.png);
+  background-position: bottom right -80px;
+  background-size: 210px;
+  background-repeat: no-repeat;
+  &.sleep{
+    background-image: url(../images/frangipani.png);
+    background-position: bottom 50px right -140px;
+    background-size: 350px;
+  }
+  .slider-arrows {
+    top: 180px;
+    margin-right: 8px;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.holders-slider {
+  &__head {
+    background-repeat: no-repeat;
+    background-position: top left;
+    min-height: 780px;
+  }
+  &__subtitle {
+    padding: 132px 0 0 0;
+  }
+  &__btn {
+    text-align: center;
+  }
+
+  &__descr {
+    padding: 160px 0 0 132px;
+    margin-top: -280px;
+    padding-left: 132px;
+    min-height: 320px;
+    background-repeat: no-repeat;
+    background-position: center right;
+    &.descr-sleep{
+      background-position: top 15px right -75px;
+      background-size: 470px;
+    }
+    img {
+      padding-left: 24px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-around;
+    &-item {
+      position: relative;
+      min-height: 200px;
+      margin-bottom: 66px;
+    }
+
+    &-subtitle {
+      position: absolute;
+      transform: rotate(270deg);
+      opacity: 0.5;
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 8px;
+      line-height: 22px;
+      text-align: right;
+      top: 97px;
+      left: -97px;
+      width: 200px;
+      height: 0;
+      white-space: nowrap;
+    }
+    &-title {
+      // Style for "Queensland"
+      position: relative;
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 36px;
+      padding-left: 40px;
+      width: 260px;
+
+      .holder-pricing__span {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        text-align: right;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 5.25px;
+        opacity: 0.75;
+        padding-right: 22px;
+        top: -15px;
+      }
+    }
+  }
+}
+
+.descr {
+  &__head {
+    position: relative;
+    padding-right: 80px;
+    &.descr-heade-sleep{
+      padding-right: 220px;
+    }
+    img {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+.holders {
+  &__star {
+    &-list {
+      position: absolute;
+      right: 0;
+      top: 0;
+      li {
+        margin-left: -40px;
+        display: inline-block;
+      }
+      img {
+        position: static;
+      }
+    }
+  }
+}
+
+.quantity {
+  display: inline-block;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  text-align: center;
+  width: 45px;
+  height: 42px;
+  line-height: 1.65;
+  display: block;
+  padding: 0;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  line-height: 36px;
+  margin: 0 -5px 0 0;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  float: left;
+  position: static;
+  height: 42px;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 1.7;
+  transform: translateX(-100%);
+  user-select: none;
+  color: $green;
+  font-size: 40px;
+  font-weight: 300;
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  top: 20px;
+  right: 5px;
+  // border-bottom: 1px solid #eee;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  bottom: -1px;
+  height: 50%;
+  top: 20px;
+  right: 30px;
+}
