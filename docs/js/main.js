@@ -32,7 +32,7 @@ $(() => {
     asNavFor: '.surf-content__slider',
     focusOnSelect: true,
   })
-  $('.holders__slider').slick({
+  $('.holders__slider, .shop__slider').slick({
     infinite: true,
     fade: true,
     prevArrow:
@@ -50,11 +50,11 @@ $(() => {
       input = spinner.find('input[type="number"]'),
       btnUp = spinner.find('.quantity-up'),
       btnDown = spinner.find('.quantity-down'),
-      min = input.attr('min'),
-      max = input.attr('max')
+      min = Number(input.attr('min')),
+      max = Number(input.attr('max'))
 
     btnUp.click(function () {
-      var oldValue = parseFloat(input.val())
+      var oldValue = Number(input.val())
       if (oldValue >= max) {
         var newVal = oldValue
       } else {
@@ -65,7 +65,7 @@ $(() => {
     })
 
     btnDown.click(function () {
-      var oldValue = parseFloat(input.val())
+      var oldValue = Number(input.val())
       if (oldValue <= min) {
         var newVal = oldValue
       } else {
@@ -75,7 +75,7 @@ $(() => {
       spinner.find('input').trigger('change')
     })
   })
-// * price calculation
+  // * price calculation
   $('.quantity-button,  .quantity input').on('click, change', function () {
     let summ =
       Number($('.nights').val()) * $('.summ').data('nights') +
@@ -86,6 +86,11 @@ $(() => {
     Number($('.nights').val()) * $('.summ').data('nights') +
     Number($('.guests').val()) * $('.summ').data('guests')
   $('.summ').html('$' + summ)
-// * /price calculation
+  // * /price calculation
 
+  // * surfbox
+  $('.surfboard-box').on('click', function () {
+    $(this).toggleClass('active');
+  })
+  // * /surfbox
 })

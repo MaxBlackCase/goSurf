@@ -1,0 +1,213 @@
+.shop {
+  background-image: url(../images/shop_bg.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  .slider-arrows{
+    opacity: .3;
+    top: -45px;
+    transition: all .3s ease;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  &__slider {
+    &-container {
+      padding: 140px 80px 0 132px;
+      display: flex;
+    }
+
+    &-info {
+      width: 100%;
+    }
+
+    &-list {
+      display: flex;
+      li {
+        margin-left: -10px;
+      }
+    }
+
+    &-price {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 40px;
+      height: 44px;
+      margin-bottom: 65px;
+      sup {
+        font-size: 18px;
+        margin-left: 5px;
+      }
+    }
+
+    &-content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__extras {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    // margin-left: 155px;
+    &-title {
+      width: 50%;
+      text-align: left;
+      height: 44px;
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+
+    &-inner {
+      display: flex;
+    }
+
+    &-box {
+      &:first-child {
+        margin-left: 0;
+      }
+      margin-left: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 0 1 100%;
+      margin-bottom: 20px;
+    }
+
+    &-name {
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 8px;
+      opacity: 0.5;
+      padding-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    &-price {
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 40px;
+      height: 44px;
+    }
+  }
+}
+
+.descr {
+  margin-bottom: 45px;
+  &__head {
+    max-width: 420px;
+  }
+}
+
+.surfboard {
+  position: relative;
+}
+.surfboard-box {
+  position: absolute;
+  min-width: 250px;
+  &__position {
+    &-1 {
+      top: 200px;
+      left: 165px;
+      .surfboard-box__content {
+        top: -15px;
+        left: 25px;
+      }
+    }
+    &-2 {
+      top: 285px;
+      left: -5px;
+      .surfboard-box__content {
+        top: -15px;
+        left: 25px;
+      }
+    }
+    &-3 {
+      left: 52px;
+      bottom: 65px;
+      .surfboard-box__content {
+        top: -15px;
+        left: -365px;
+        padding-left: 0;
+        padding-right: 100px;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 80px;
+          height: 1px;
+          top: 50%;
+          right: 0;
+          left: auto;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  &__circle {
+    position: relative;
+    cursor: pointer;
+    .circle-row {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 12px;
+      height: 2px;
+      transform: translate(-50%, -50%);
+      background-color: $green;
+      transition: all 0.3s ease;
+      & + .circle-row {
+        transform: translate(-50%, -50%) rotate(90deg);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+    }
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  &__content {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease 0.2s;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 24px;
+    width: 360px;
+    padding-left: 100px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 1px;
+      top: 50%;
+      left: 0;
+      background-color: #fff;
+    }
+  }
+}
+.surfboard-box.active {
+  .circle-row {
+    & + .circle-row {
+      transform: translate(-50%, -50%) rotate(0);
+    }
+  }
+  .surfboard-box {
+    &__content {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

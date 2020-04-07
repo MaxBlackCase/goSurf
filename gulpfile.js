@@ -4,7 +4,6 @@ let rename = require('gulp-rename')
 let sass = require('gulp-sass')
 let uglify = require('gulp-uglify')
 let concat = require('gulp-concat')
-let pug = require('gulp-pug')
 let kit = require('gulp-kit')
 let autoprefixer = require('gulp-autoprefixer')
 
@@ -46,16 +45,6 @@ gulp.task('html', function() {
   return gulp.src('docs/*.html').pipe(browserSync.reload({ stream: true }))
 })
 
-gulp.task('pug', function() {
-  return gulp
-    .src('./docs/*.pug')
-    .pipe(
-      pug({
-        pretty: true
-      })
-    )
-    .pipe(gulp.dest('./docs/'))
-})
 
 gulp.task('script', function() {
   return gulp.src('docs/js/*.js').pipe(browserSync.reload({ stream: true }))
