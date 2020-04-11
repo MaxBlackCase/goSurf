@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 0 35px 0;
+  &__btn {
+    .btn {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 28px;
+      margin-bottom: 30px;
+      span {
+        &::before {
+          display: none;
+        }
+        padding: 15px 18px;
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1.05px;
+    line-height: 14px;
+    opacity: 0.5;
+  }
+}

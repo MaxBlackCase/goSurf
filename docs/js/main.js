@@ -90,7 +90,7 @@ $(() => {
 
   // * surfbox
   $('.surfboard-box').on('click', function () {
-    $(this).toggleClass('active');
+    $(this).toggleClass('active')
   })
   // * /surfbox
 })
