@@ -93,4 +93,10 @@ $(() => {
     $(this).toggleClass('active')
   })
   // * /surfbox
+
+  // * menu-btn
+  $('.menu-btn').on('click', () => {
+    $('.menu').toggleClass('active');
+  })
+  // * /menu-btn
 })

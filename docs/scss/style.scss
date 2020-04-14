@@ -18,6 +18,12 @@
       background-position: center;
     }
   }
+  .slider-arrows {
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 }
 
 .slider-item {
@@ -53,7 +59,12 @@
     }
   }
 }
-
+.slider-item__info-link{
+  transition: all .3s ease;
+  &:hover{
+    opacity: 0.5;
+  }
+}
 .slider-dotshead {
   // .slider-dotshead__item
   position: absolute;
@@ -90,7 +101,9 @@
     text-transform: capitalize;
   }
 }
-
+.menu-btn{
+  display: none;
+}
 .header {
   // .header__title
   &__title {
