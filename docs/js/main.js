@@ -13,6 +13,12 @@ $(() => {
     slidesToShow: 4,
     slidesToScroll: 4,
     asNavFor: '.header__slider',
+    responsive: [
+      {
+        breakpoint: 961,
+        settings: 'unslick',
+      },
+    ],
   })
 
   $('.surf-content__slider').slick({
@@ -23,6 +29,36 @@ $(() => {
     nextArrow:
       '<img class="slider-arrows slider-arrows__right" src="images/arrows-right.svg" alt="arrow-right">',
     asNavFor: '.slider-map',
+    responsive: [
+      {
+        breakpoint: 1210,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          centerMode: true,
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false
+        },
+      },
+    ],
   })
 
   $('.slider-map').slick({
@@ -31,6 +67,29 @@ $(() => {
     arrows: false,
     asNavFor: '.surf-content__slider',
     focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 1103,
+        settings: {
+          centerMode: true,
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          centerMode: true,
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          centerMode: true,
+          slidesToShow: 1,
+        },
+      },
+    ],
   })
   $('.holders__slider, .shop__slider').slick({
     infinite: true,
@@ -96,7 +155,7 @@ $(() => {
 
   // * menu-btn
   $('.menu-btn').on('click', () => {
-    $('.menu').toggleClass('active');
+    $('.menu').toggleClass('active')
   })
   // * /menu-btn
 })
