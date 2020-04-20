@@ -1,0 +1,134 @@
+@media (max-width: 1150px) {
+  .holders-slider__descr {
+    padding: 160px 0 0 20px;
+    background-position: right 20px top 25px;
+    background-size: 515px;
+  }
+  .surf,
+  .holders {
+    padding: 70px 0 50px;
+    .slider-arrows {
+      right: 20px;
+      top: 100px;
+      &__left {
+        right: 60px;
+      }
+    }
+  }
+  .holders-slider {
+    &__subtitle {
+      padding-top: 0px;
+    }
+    &__info {
+      display: block;
+      &-title {
+        padding-left: 0;
+        padding-top: 5px;
+        font-size: 34px;
+        .holder-pricing__span {
+          text-align: left;
+          padding-left: 40px;
+        }
+      }
+      &-subtitle {
+        position: static;
+        transform: rotate(0);
+        height: auto;
+        width: auto;
+        text-align: left;
+      }
+      &-item {
+        min-height: auto;
+        margin-bottom: 25px;
+        padding-left: 20px;
+      }
+    }
+  }
+  .quantity-button.quantity-up, .quantity-button.quantity-down{
+    top: -15px;
+  }
+  .quantity-button.quantity-up{
+    right: -15px;
+  }
+  .quantity-button.quantity-down{
+    right: 10px;
+  }
+  .quantity-nav{
+    height: 0;
+  }
+  .quantity{
+    input{
+      margin-left: -10px;
+    }
+  }
+  .holder-pricing{
+    &__span{
+      margin-left: -30px;
+    }
+  }
+  //  .quantity-down 
+}
+@media (max-width: 640px) {
+  .holders-slider__descr, .sleep {
+    background-image: none !important;
+  }
+  .holders-slider__info-title{
+    font-size: 34px;
+  }
+  .holder-pricing{
+    &__span{
+      font-size: 12px !important;
+      margin-left: -20px;
+    }
+  }
+}
+@media (max-width: 470px) {
+  .holders {
+    background-image: none;
+  }
+  .descr {
+    &__head {
+      font-size: 26px;
+    }
+    .headline-right {
+      font-size: 18px;
+    }
+  }
+  .holders__star-list{
+    top: 25px;
+    right: auto;
+    left: 5px;
+  }
+  .holders-slider {
+    &__info {
+      &-title {
+        padding-left: 0;
+        // padding-top: 5px;
+        font-size: 28px;
+        .holder-pricing__span {
+          text-align: left;
+          padding-left: 40px;
+        }
+      }
+      &-subtitle {
+        font-size: 14px;
+        letter-spacing: 2px;
+      }
+      &-item {
+        min-height: auto;
+        margin-bottom: 25px;
+        padding-left: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 330px){
+  .descr{
+    &__head{
+      font-size: 24px;
+    }
+  }
+
+}
+
+

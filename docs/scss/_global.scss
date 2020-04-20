@@ -39,17 +39,17 @@ a {
 }
 
 .title {
+  display: block;
+  padding-left: 75px;
   span {
     display: inline-block;
     position: relative;
+    top: 0;
+    left: 0;
     color: rgba($color: #fff, $alpha: 0.02);
     font-size: 200px;
     font-weight: 800;
     transform: translateX(-50px);
-  }
-  .container {
-    max-width: 1920px;
-    margin: 0 auto;
   }
   h3 {
     position: absolute;
@@ -68,8 +68,58 @@ a {
       background-color: $green;
     }
   }
+  @media (max-width: 1150px) {
+    span {
+      font-size: 90px;
+      h3 {
+        right: auto;
+        left: 0;
+        font-size: 70px;
+      }
+    }
+  }
+  @media (max-width: 376px) {
+    span {
+      font-size: 60px;
+      h3 {
+        top: 15px;
+        right: 40px;
+        font-size: 40px;
+      }
+    }
+  }
 }
-
+.subtitle {
+  width: 100%;
+  padding-right: 80px;
+  margin-top: -55px;
+  display: inline-block;
+  text-align: right;
+  &__head {
+    font-size: 40px;
+    font-weight: 800;
+    padding-right: 10px;
+    span {
+      font-weight: 100;
+    }
+  }
+  @media (max-width: 1150px) {
+    padding: 65px 20px 0 0;
+    &__head{
+      font-size: 30px;
+    }
+  }
+  @media (max-width: 768px){
+    .headline-left{
+      font-size: 16px;
+    }  
+  }
+  @media (max-width: 440px) {
+    &__head{
+      font-size: 20px;
+    }
+  }
+}
 .headline-left,
 .headline-right {
   // Style for "Surf"
@@ -98,20 +148,6 @@ a {
     right: 0;
     left: auto;
   }
-}
-
-.subtitle {
-  display: inline-block;
-  text-align: right;
-  &__head {
-    font-size: 40px;
-    font-weight: 800;
-    padding-right: 10px;
-    span {
-      font-weight: 100;
-    }
-  }
-  
 }
 
 .slider-arrows {
@@ -157,12 +193,6 @@ a {
   }
 }
 
-.subtitle {
-  width: 100%;
-  padding-right: 80px;
-  margin-top: -55px;
-}
-
 .descr {
   display: inline-block;
   padding-left: 5px;
@@ -180,4 +210,3 @@ a {
   padding: 160px 0px 120px 0px;
   margin-bottom: 35px;
 }
-

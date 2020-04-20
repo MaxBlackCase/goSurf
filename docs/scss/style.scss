@@ -107,7 +107,6 @@
 .header {
   // .header__title
   &__title {
-    // Style for "go surf"
     position: absolute;
     top: 0;
     left: 0;
@@ -219,3 +218,4 @@
 @import './footer';
 @import './media-header';
 @import './media-surf';
+@import './madia-holders';
