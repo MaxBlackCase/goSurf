@@ -158,4 +158,5 @@ $(() => {
     $('.menu').toggleClass('active')
   })
   // * /menu-btn
+  new WOW().init()
 })

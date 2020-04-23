@@ -21,6 +21,8 @@ body {
   color: #fff;
   background-color: #171919;
   text-transform: uppercase;
+  min-width: 320px;
+  overflow-x: hidden;
 }
 .container {
   max-width: 1920px;
@@ -39,17 +41,19 @@ a {
 }
 
 .title {
-  display: block;
-  padding-left: 75px;
-  span {
+  // display: block;
+  div {
     display: inline-block;
     position: relative;
-    top: 0;
-    left: 0;
+    // top: 0;
+    // left: 0;
     color: rgba($color: #fff, $alpha: 0.02);
     font-size: 200px;
     font-weight: 800;
     transform: translateX(-50px);
+    span{
+      display: inline-block;
+    }
   }
   h3 {
     position: absolute;
@@ -69,17 +73,20 @@ a {
     }
   }
   @media (max-width: 1150px) {
-    span {
+    padding-left: 75px;
+    div {
       font-size: 90px;
+      span{
+        margin-left: -45px;
+      }
       h3 {
-        right: auto;
         left: 0;
         font-size: 70px;
       }
     }
   }
   @media (max-width: 376px) {
-    span {
+    div {
       font-size: 60px;
       h3 {
         top: 15px;

@@ -54,7 +54,8 @@ gulp.task('js', function() {
   return gulp
     .src([
       'node_modules/jquery/dist/jquery.js',
-      'node_modules/slick-carousel/slick/slick.js'
+      'node_modules/slick-carousel/slick/slick.js',
+      'node_modules/wow.js/dist/wow.js'
     ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
